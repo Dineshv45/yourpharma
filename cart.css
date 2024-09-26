@@ -1,0 +1,373 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html, body{
+    height: auto;
+    width: 100%;
+    margin: 0;
+
+}
+body::-webkit-scrollbar{
+    display: block;
+    width: 5px;
+    background-color: #95C11E;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 50px;
+}
+
+
+#cursor {
+  height: 10px; /* Size of your custom cursor */
+  width: 10px;
+  background-color: black;
+  border-radius: 50%;
+  position: fixed; /* Ensure it stays relative to the viewport */
+  z-index: 9999;
+  transition: transform 0.1s ease; /* Optional for smooth movement */
+}
+
+
+#navbar {
+position: relative;
+height: 70px;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: space-between;
+z-index: 100;
+}
+
+#navbar h1{
+  padding-left: 30px;
+  color: black;
+  font-weight: 700;
+}
+
+#logo{
+  margin-left: 30px;
+  width: 150px;
+  height:80px ;
+}
+.navbar-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+  .navbar-options li:hover{
+    text-decoration: underline white;
+    text-underline-offset: 25px;
+    text-decoration-thickness: 3px;
+}
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    width: 30vw;
+    text-decoration: none;
+  }
+  #navbar a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    transition: color 0.3s ease ease-in-out, transform 0.3s ease ease-in-out; 
+  }
+  
+  .icons {
+    width:200px;
+    float: right;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+  }
+  
+  .icons i {
+    font-size: 35px;
+    cursor: pointer;
+    color: black;    
+  }
+  .icons i:hover{
+    text-decoration: underline white;
+    text-underline-offset: 18px;
+    text-decoration-thickness: 3px;
+}
+.logo img {
+  height: 100px;
+  width: 150px;
+}
+.bag{
+  position: relative;
+}
+
+.quantity{
+  background-color: #85ff63;
+  color: black;
+  position: absolute;
+  right: 1px;
+  bottom: 68%;
+  border-radius: 50%;
+  padding: 1px 5px 1px 5px;
+}
+
+  
+  .contain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+  }
+  
+  .board{
+    margin-top: 80px;
+    width: 100%;
+    display:flex;
+    justify-content: space-evenly;
+  
+  }
+  body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #39df8f;
+  }
+  .cart-heading{
+    margin-top: 40px;
+    font-size: 40px;
+    color: black;
+  
+  }
+  .cart-container{
+    position: relative;
+    min-height: 100px;
+    max-height: 700px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-top: 40px;
+    width: 700px;
+    box-sizing: border-box;
+    border-radius: 20px 20px 0px 0px;
+    background-color:rgb(249, 248, 248);
+  
+  }
+  .cart-head{
+    position: sticky;
+    top: 0;
+ 
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color:#7CB9E8;
+    color: black;
+    border-radius: 20px 20px 0px 0px;
+    padding-left: 40px;
+  }
+  .cart-body{
+    padding-bottom: 10px;
+  }
+  #cart-empty {
+    display: none; /* Hide by default */
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.rows {
+    display: none; /* Hide by default */
+    margin: auto;
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 10px;
+    box-shadow: 8px 8px 1px 1px #1c1c1c98;
+}
+
+/* .row1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+} */
+
+  .remove-btn{
+    cursor: pointer;
+  } 
+  
+  .cart-body{
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .cart-container span img{
+    width: 100px ;
+    height: 100px;
+  }
+  .cart-container input{
+    text-align: center;
+    width: 35px;
+    color: black;
+    font-weight: 500;
+    border: 1px solid black;
+  }
+  .total{
+    background-color: #7CB9E8;
+    color: black;
+    height: 40px;
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+  }
+  .buy-btn{
+    width: 700px;
+    height: 40px;
+    font-size: 24px;
+    background-color: #1c1c1c;
+    color: white;
+    border-radius: 0px 0px 20px 20px;
+  }
+  .cart-footer{
+    border-radius: 0px 0px 20px 20px;
+    margin-bottom: 50px;
+  }
+.productname{
+  width: 60px;
+}
+/*---------- payment section------ */
+.pay{
+  margin-top: 20px;
+  height: 550px;
+  width: 450px;
+  border: 1px solid #39df8f;
+  background-color: rgb(249, 248, 248);;
+  border-radius: 20px;
+  position: relative;
+}
+.payment{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#pay-body{
+padding: 25px;
+}
+#main-pay-head{
+  font-size: 20px;
+}
+.pay h2{
+  font-size: 18px;
+  font-weight: 400;
+}
+#main-pay-head{
+  text-align: center;
+  display: block;
+  background-color: #7CB9E8;
+  border-radius: 20px 20px 0px 0px;
+  height: 50px;
+  padding-top:15px;
+  margin-bottom: 10px;
+}
+#email-div{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#pay-body input{
+  padding-left: 10px;
+  border-radius: 5px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+#name-address{
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#name-address textarea{
+  height: auto;
+  margin-top: 12px;
+  border-radius: 5px;
+}
+
+#paymentdetails{
+  margin-top: 25px;
+}
+#card-number{
+  width: 400px;
+  margin-bottom: 10px;
+}
+#expiry-date{
+  margin-right: 20px;
+}
+#expiry-date, #cvv{
+  width: 185px;
+}
+
+#pay-btn{
+  position: absolute;
+  bottom: 0;
+  border-radius: 0px 0px 20px 20px;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+}
+
+
+
+#city-select{
+  margin-right: 50px;
+}
+.selection{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.selection select{
+  height: 25px;
+  max-width: 350px;
+}
+
+#Hyderabad-shops{
+  display: block;
+}
+#Mumbai-shops{
+  width: 350px;
+  display: none;
+}
+
+#Chennai-shops{
+  display: none;
+}
+
+#Bangalore-shops{
+  display: none;
+}
+
+#Delhi-shops{
+  display: none;
+}
+
+

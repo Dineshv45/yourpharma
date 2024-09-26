@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>YourPharm</title>
+        <link rel="stylesheet" href="cart.css" />
+  
+         <link rel="icon" href="images/capsule.png">
+        <link
+          rel=" stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
+        <script
+          src="https://kit.fontawesome.com/0c558f2462.js"
+          crossorigin="anonymous"
+        ></script>
+    
+        
+      </head>
+<body>
+
+  <div id="cursor"></div>
+
+  <div id="navbar">
+    <!-- <img src="images/Screenshot-2024-09-10-130401.jpg" alt="" id="logo"> -->
+     <h1>YourPharma</h1>
+
+   <div class="navbar-options">
+     <ul>
+      <li><a href="index.html">HOME</a></li>
+       <li><a href="appointment.html">APPOINTMENT</a></li>
+       <li><a id="gotomedicines" href="medicines.html">MEDICINES</a></li>
+     </ul>
+
+     <!-- <div class="search">
+       <span class="search-icon material-symbols-outlined">search</span>
+       <input type="text" class="search-bar" placeholder="Search" />
+       <span id="enter">search</span>
+     </div> -->
+     <div class="icons">
+       <!-- <i class="fa-solid fa-user"></i> -->
+       <div class="bag" >
+         <a href="cart.html">
+           <i class="fa-solid fa-cart-shopping"></i>
+           <span class="quantity">0</span>
+         </a>
+       </div>
+     </div>
+   </div>
+ </div>
+
+    <h1 class="cart-heading">Your Cart</h1>
+  
+        <div class="board">
+    <div class="contain">
+        <div class="selection">
+            <label for="select">Select City : </label>
+            <select name="City" id="city-select">
+               
+                <option value="City">City</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Delhi">Delhi</option>
+            </select>
+
+            <label for="select">Select Shop : </label>
+            <select name="Shop" id="Hyderabad-shops" >
+                <option value="0">Shop</option>
+                <option value="1">Akshara Pharmacy and General Store, Madhapur</option>
+                <option value="2">Green Pharmacy, Nizampet</option>
+                <option value="3">Ideal Medical and General Store, Himayat Nagar</option>
+                <option value="4">Apollo Pharmacy, Kompally</option>
+                <option value="5">MOR Chemists & Druggists Basheer Bagh</option>
+            </select>
+            
+            <select name="Shop" id="Mumbai-shops" >
+                <option value="0">Shop</option>
+                <option value="1">Bandra Medical Stores, bandra west</option>
+                <option value="2">Wellness Forever Pharmacy - Pali Hill</option>
+                <option value="3">Health Guard Medico & Supermarket</option>
+                <option value="4">Bombay Crafts Pharmacy & General Store</option>
+                <option value="5">Wellness Forever Pharmacy - Hiranandani Gardens, Powai, Mumbai</option>
+            </select>
+
+            <select name="Shop" id="Chennai-shops" >
+                <option value="0">Shop</option>
+                <option value="1">Big Shop Pharmacy</option>
+                <option value="2">NEWGEN PHARMACY Chennai's Largest</option>
+                <option value="3"> Medical and General Store</option>
+                <option value="4">Om Pharmacy</option>
+                <option value="5">Karuppiah Pharmacy</option>
+            </select>
+
+            <select name="Shop" id="Bangalore-shops" >
+                <option value="0">Shop</option>
+                <option value="1">Popular Pharma</option>
+                <option value="2">Pharma point</option>
+                <option value="3">Aster Pharmacy - Rajaji Nagar</option>
+                <option value="4"> Yasho Pharma</option>
+                <option value="5">Wellness Forever Pharmacy</option>
+            </select>
+
+            <select name="Shop" id="Delhi-shops" >
+                <option value="0">Shop</option>
+                <option value="1">ASanjivani Chemist</option>
+                <option value="2">Popular Medicos</option>
+                <option value="3">Big Pharmacy</option>
+                <option value="4">DELHI MEDICOS</option>
+                <option value="5">Aggarwal Medical Store Pvt Ltd</option>
+            </select>
+
+
+
+        </div>
+        <div class="cart-container cart">
+            <div class="cart-head ">
+                <!-- <span>Product Id</span> -->
+                <span>Product</span>
+                <span>Product Name</span>
+                <span>Quantity</span>
+                <span>Price</span>
+                <span>Remove</span>
+            </div>
+
+            <div class="cart-body">
+                <div id="cart-empty">Your Cart is Empty</div>
+                <!-- <div class="rows">
+                    <div class="row1">
+                        <span class="productid">1</span>
+                        <span><img src="/medicines/Aspirin.jpg" alt="" class="productimage"></span>
+                        <span class="productname">Product Name</span>
+                        <span class="productquantity"><input type="number" value="1"></span>
+                        <span class="productprice">Rs.100</span>
+                        <span class="remove-btn"><i class="fa-solid fa-trash"></i></span>
+                    </div>
+                </div> -->
+            </div>
+            
+
+        </div>
+        <div class="cart-footer">
+            <div class="total">
+            <span>Total</span>
+            <span class="total-value">Rs.0</span>
+        </div>
+        <button class="buy-btn">CheckOut</button>
+        </div>
+    </div>
+   
+    <div class="Payment">
+      <h1><center>Payment</center></h1>
+      <div class="pay">
+          <h2 id="main-pay-head">Shipping Information</h2>
+          <div id="pay-body">
+              <div id="email-div">
+                  <h2 id="email-head">Email</h2>
+                  <input type="email" placeholder="Enter your Email" id="email" required>
+              </div>
+              <div id="name-address">
+                  <h2 id="address-head">Shipping Address</h2>
+                  <input type="text" placeholder="Name" id="name" required>
+                  <textarea id="address" placeholder="Address" required></textarea>
+              </div>
+              <div id="paymentdetails">
+                  <h2 id="pay-details">Payment Details</h2>
+                  <input type="text" id="card-number" name="card-number" maxlength="16" placeholder="1234 5678 9012 3456" required pattern="\d{16}"  >
+                  <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required pattern="(0[1-9]|1[0-2])\/\d{2}">
+                  <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="123" required pattern="\d{3}">
+              </div>
+          </div>
+          <button id="pay-btn" type="submit">Pay</button>
+      </div>
+  </div>
+  
+  <div id="error-message"></div>
+  
+</div>
+
+<script src="cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,759 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar{
+    display: block;
+    width: 5px;
+    background-color: #95C11E;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 50px;
+}
+
+#cursor{
+    font-size: 30px;
+    font-weight: 600;
+    height: 10px;
+    width: 10px;
+    color: black;
+    border-radius: 50%  ;
+    position: fixed;
+    z-index: 99;
+    background-color: black;
+    transition: transform 0.1s ease; 
+    
+} 
+
+#navbar {
+position: fixed;
+ height: 70px;
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ z-index: 100;
+ /* background-color: black; */
+}
+
+#navbar h1{
+    padding-left: 30px;
+    color: black;
+    font-weight: 700;
+}
+
+#logo{
+    margin-left: 30px;
+    width: 150px;
+    height:80px ;
+}
+  .navbar-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-options li:hover{
+    text-decoration: underline white;
+    text-underline-offset: 25px;
+    text-decoration-thickness: 3px;
+}
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    width: 20vw;
+    text-decoration: none;
+  }
+  #navbar a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    transition: color 0.3s ease ease-in-out, transform 0.3s ease ease-in-out; 
+  }
+  
+  .icons {
+    width:200px;
+    float: right;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+  }
+  
+  .icons i {
+    font-size: 35px;
+    cursor: pointer;
+    color: black;    
+  }
+  .icons i:hover{
+    text-decoration: underline white;
+    text-underline-offset: 18px;
+    text-decoration-thickness: 3px;
+}
+  
+  .logo img {
+    height: 100px;
+    width: 150px;
+  }
+  .bag{
+    position: relative;
+  }
+  
+  .quantity{
+    background-color: #85ff63;
+    color: black;
+    position: absolute;
+    right: 1px;
+    bottom: 68%;
+    border-radius: 50%;
+    padding: 1px 5px 1px 5px;
+  }
+
+  #main{
+    position: relative;
+    background-color: white;
+}
+
+  #page1{
+    background-image: url("images/pharmacy.jpg");
+    background-repeat: no-repeat;
+    background-size:cover ;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    /* z-index: 10; */
+    background-color: #39df8f;
+}
+#hero-section {
+    padding-top: 120px;
+    height: 30%;
+    width: 50%;
+    top: 30%;
+    left: 50%;
+    position: relative;
+}
+
+#hero-section h1 {
+    cursor: pointer;
+    position: relative;
+    font-size: 70px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 5px 5px 3px black; 
+}
+
+.video-container {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Circular frame */
+    overflow: hidden;
+    display: none; /* Initially hidden */
+    pointer-events: none; /* Ensure it doesn't interfere with other mouse events */
+}
+
+#hoverVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures video fills the circular frame */
+}
+
+
+
+#page1 h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 10px 0px;
+    text-shadow: 3px 3px 1px black;
+}
+
+
+#page3{
+    margin-top: 30px;
+    width: 100%;
+    /* z-index: 10; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+#page3 h1{
+    color:black;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.container {
+    position: relative; /* Set relative positioning for the container */
+    max-width: 1300px;
+    margin: auto; /* Center the container horizontally */
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.cards-container1{
+    height: 55vh;
+    width: 1300px;
+    background-color: #39df8f;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* z-index: 10; */
+    /* gap: 50px; */
+}
+.cards-container2{
+    margin-top: 50px;
+    height: 55vh;
+    width: 1300px;
+    background-color: #39df8f;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 10;
+}
+
+.card {
+    height: 85%;
+    width: 20%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.card-img {
+    height: 70%;
+    width: 70%;
+    cursor: pointer;
+}
+.flying-img{
+    position: absolute;
+    animation: fly_to_cart 1s ease-in-out ;
+    z-index: 100;
+}
+
+@keyframes fly_to_cart {
+    0%{
+        left: 0;
+        top: 0;
+    }
+    45%, 50%{
+        left: var(--left);
+        top: var(--bottom);
+    }
+    80%, 90%{
+        left: var(--left);
+        top: var(--bottom);
+        transform: scale(0.2);
+    }
+    100%{
+        left: var(--left);
+        top: var(--bottom);
+        transform: scale(0.2);
+    }
+
+}
+
+.card h4 {
+    /* color: rgb(9, 48, 48); */
+    color: black;
+}
+
+.card i {
+    font-size: 13px;
+    color: rgb(9, 48, 48);
+    margin-right: 5px;
+}
+
+.price {
+    color: rgb(9, 48, 48);
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.cart-btn {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* background: linear-gradient(to bottom, # 0%, #7CB9E8 100%); */
+    background-color: #7CB9E8;
+    display: none; /* Initially hidden */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transition: 0.3s ease;
+}
+
+.overlay h4 {
+    color: black;
+    font-size: 30px;
+}
+
+.overlay p {
+    color: black;
+    font-size: 14px;
+}
+
+.card:hover .overlay {
+    display: flex;
+    opacity: 1;
+}
+/* .card:hover{
+    transform: rotate3d(-0.2,0.5,0,20deg);
+} */
+
+#category-btn{
+    background-color: rgb(9, 48, 48);
+    color:white;
+    padding: 5px;
+    margin: 60px 0px;
+    cursor: pointer;
+}
+#category-btn a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+#page4 {
+    margin-top: 50px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #7CB9E8;
+    overflow: hidden; /* Ensure that any overflow is hidden */
+}
+
+#bg-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1; /* Send the bg-text behind other elements */
+}
+
+#bg-text h1 {
+    font-size: 150px; /* Make it large to appear as a background */
+    color: rgba(128, 128, 128, 0.479); /* Light grey with transparency */
+    font-weight: bold;
+}
+
+#box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 200px;
+    position: relative;
+    z-index: 1; /* Ensure this is above bg-text */
+}
+
+.images {
+    margin-right: 250px;
+}
+
+.box-img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 5px 5px 3px black;
+    position: relative;
+}
+
+.outer-img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 5px 5px 3px black;
+    position: absolute;
+    align-self: center;
+}
+
+.img1 {
+    z-index: 2;
+    transform: translate(10px, -10px);
+}
+
+.img2 {
+    z-index: 1;
+    transform: translate(-10px, 10px);
+}
+
+#box1,
+#box2 {
+    height: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    display: none;
+    position: relative;
+}
+
+.para {
+    width: 600px;
+    font-size: 18px;
+    color: black;
+    font-weight: 400;
+    display: none;
+}
+
+#hide-btn {
+    padding: 8px;
+    background-color: #39df8f;
+    color: black;
+    font-weight: 500;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 3px black;
+    margin-bottom: 30px;
+    position: relative; /* To position it properly when floating */
+    animation: float 2s ease-in-out infinite; /* Adding float animation */
+}
+
+#hide-btn span {
+    color: black;
+}
+
+/* Keyframes for the floating effect */
+@keyframes float {
+    0% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(-15px); 
+    }
+    100% {
+        transform: translateY(0); 
+    }
+}
+
+
+#footer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 45vh;
+    width: 100%;
+    gap: 300px;
+    background-color:#85ff63;
+    /* background: linear-gradient(to bottom, #119f3A , #ACE022); */
+}
+
+#footer-logo{
+    margin-left:20px ;
+    font-size: 40px;
+    color: white;
+    text-shadow: 5px 5px 3px black; 
+}
+#email{
+    margin-left:20px ;
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   gap:10px;
+   cursor: pointer;
+}
+#email span{
+    font-size: 16px;
+    color: black;
+  
+}
+#email i{
+    color: black;
+    font-size: 26px;
+}
+
+#profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+#head {
+    height: 150px;
+    width: 200px;
+    display: flex;
+    flex-direction: column; /* Set flex direction to column */
+    justify-content: center; /* Center align items vertically */
+    align-items: center; /* Center align items horizontally */
+    margin: 20px 0;
+}
+
+#head img {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative; /* Change to relative to align properly */
+    margin-bottom: 10px; /* Add some space between the image and header */
+}
+
+#head h3 {
+    margin: 0; /* Remove default margin for better alignment */
+    color: black;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+
+#details{
+    height: 270px;
+    width: 250px;
+    background-color: #000;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    border-radius: 20px;
+    border: #95C11E 1px solid;
+    opacity: 0;
+    display: none;
+    /* z-index: 10; */
+    transition: all ease-out 5s;
+    padding-bottom: 10px;
+}
+#details img{
+    height: 45px;
+    width: 45px;
+    border-radius: 30px;
+}
+#content-header{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    gap:10px
+}
+#content-header h4{
+    font-size: 20px;
+    font-family: 700;
+}
+#Developer{
+    width: 100%;
+    padding: 10px;
+}
+#Developer p{
+    font-size: 14px;
+}
+#details #contact{
+    width: 85%;
+    height: 50px;
+    border-radius: 20px;
+    background-color:white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px;
+}
+#details #contact i{
+    color: black;
+    font-size: 26px;
+    transition: transform 0.6s ease, color 0.3s ease;
+}
+#contact i:hover{
+    color: #7CB9E8;
+    transform: rotateY(360deg);
+}
+
+#links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#links div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    font-weight: 500;
+}
+#links a{
+    text-transform: capitalize;
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+    cursor: pointer;
+}
+#links i{
+    font-size: 16px;
+    color: black;
+}
+#arrow{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    height: 70px;
+    width: 70px;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out;
+  overflow: hidden;
+}
+#arrow i{
+    right: 22px;
+    bottom: 20px;
+    position: absolute;
+    color:black ;
+    font-size: 30px;
+}
+#arrow a{
+    display: block;
+    padding: 50px 50px;  
+}
+
+#arrow:hover{
+    transform: scale(1.5);
+    background-color: white;
+    overflow:hidden;
+    /* overflow-x: hidden; */
+}
+#arrow:hover #arrow-btn{
+    color: #119f3A;
+}
+
+/* {
+ #b4f8c8
+ #fbe7c6
+ #a0e7e5
+ #ffaebc
+} */
+
+.p1 span, .p2 span {
+    display: inline-block; 
+    transition: transform 0.3s ease; 
+    margin-right: 5px; 
+    color: black; 
+    font-weight: 500;
+}
+
+.p1 span:hover, .p2 span:hover {
+    transform: translateY(-10px); /* Move up on hover */
+}
+/* Pre-loader container styles */
+#pre-loader {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background-color: #39df8f;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+/* The moving bike */
+#bike {
+    position: absolute;
+    font-size: 50px;
+    color: #262626;
+    animation: moveBikeAcrossPage 5s linear infinite; /* Moves bike left to right without reversing */
+}
+
+/* Wind effect using pseudo-elements */
+#bike::before, #bike::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    height: 5px;
+    width: 40px;
+    border-radius: 50%;
+    top: 50%;
+    left: -50px;
+    transform: translateY(-50%);
+    animation: windTrail 1s ease-in-out infinite;
+}
+#bike i {
+    color: black;
+}
+
+#bike::after {
+    left: -80px;
+    width: 60px;
+}
+
+
+@keyframes moveBikeAcrossPage {
+    0% {
+        left: -100px;
+        transform: translateX(-50%);
+    }
+    100% {
+        left: calc(100vw + 100px);
+        transform: translateX(-50%);
+    }
+}
+
+/* Wind trail animation */
+@keyframes windTrail {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
