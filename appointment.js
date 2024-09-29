@@ -5,7 +5,7 @@ document.addEventListener("mousemove",function(dets){
 })
 
 
-
+//------------hiding other options based on choosed option------------------
 let city = document.querySelector("#city-select");
 
 //hiding initially
@@ -276,8 +276,6 @@ difference.forEach(diff => {
         if (date === diff) {
             dates.style.backgroundColor = "grey"; 
             previous_set.push(dates)
-           
-            // console.log("white");
         }
     });
 });
@@ -296,7 +294,6 @@ dateElements.forEach(date=>{
             return; 
         }
        
-        // console.log(previous_date)
         date.style.backgroundColor="#39df8f";
         previous_date = date;
         calculateTimeSlot();
@@ -331,25 +328,24 @@ random.forEach(random =>{
 })
 }
 
-var Time = "";
+
 let previous_slot = null;
 let time_slots= document.querySelectorAll(".time");
-
-time_slots.forEach(slot=>{
-   
-    slot.addEventListener("click",()=>{
-        if(previous_slot){
-            previous_slot.style.backgroundColor="white"
+var Time="";
+time_slots.forEach(slot => {
+    slot.addEventListener("click", () => {
+        if (previous_slot) {
+            previous_slot.style.backgroundColor = "white";
         }
         if (getComputedStyle(slot).backgroundColor === "rgb(128, 128, 128)") {
             return; 
         }
-        slot.style.backgroundColor="#39df8f";
-        previous_slot=slot;
+        slot.style.backgroundColor = "#39df8f";
+        previous_slot = slot;
         Time = slot.innerText;
-      
-    })
-})
+    });
+});
+
 
 
 let times = document.querySelectorAll(".time");
@@ -387,17 +383,11 @@ let doctorSelect = document.querySelectorAll("#doctor select");
 doctorSelect.forEach(select => {
     select.addEventListener("change", (event) => {
         let doctor = event.target.options[event.target.selectedIndex].text;
-        dctrselect = doctor;  // Update global variable
+        dctrselect = doctor;  
         // console.log(`Selected Doctor: ${dctrselect}`);  
     });
 });
-// var Time = "";
-// let slot_times = document.querySelectorAll(".time");
-// slot_times.forEach(time=>{
-//     time.addEventListener("click",()=>{
-//         Time = time.innerText
-//     })
-// })
+
 
 var Date="";
 let slot_dates = document.querySelectorAll(".date");
@@ -407,7 +397,9 @@ slot_dates.forEach(date=>{
     })
 })
 
+
 console.log(dctrselect);
+
 //------------form elements------------------------
 let selected_city= document.querySelector("#city-name");
 let selected_hospital = document.querySelector("#hospital-name");
@@ -417,27 +409,33 @@ let select_time = document.querySelector("#select-time");
 
 var chosenCity="";
 book_btn.addEventListener("click", () => {
-    // Get the selected values
+    if(Date==="" || Time===""){
+        alert("Please, select both Date and Time before proceeding.");
+    }
+    else{
+         // Get the selected values
      chosenCity = citySelect.options[citySelect.selectedIndex].text;
 
-    // Update the form with the selected values
-    selected_city.innerText = chosenCity;      
-    selected_hospital.innerText = hospitalSelect;
-    selected_doctor.innerText = dctrselect;
-    select_date.innerText = Date;
-    select_time.innerText = Time;    
-
+     // Update the form with the selected values
+     selected_city.innerText = chosenCity;      
+     selected_hospital.innerText = hospitalSelect;
+     selected_doctor.innerText = dctrselect;
+     select_date.innerText = Date;
+     select_time.innerText = Time;    
+ 
+    
+ 
+     // Display the form
+     form.style.display = "flex";  
+     selection_field.style.opacity = "0";
+ 
+     gsap.from("#form", { 
+         x: -500,
+         duration: 0.5,
+         scale: 0.2,      
+     });
+    }
    
-
-    // Display the form
-    form.style.display = "flex";  
-    selection_field.style.opacity = "0";
-
-    gsap.from("#form", { 
-        x: -500,
-        duration: 0.5,
-        scale: 0.2,      
-    });
 });
 
 // Close button functionality

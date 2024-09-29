@@ -1,42 +1,11 @@
 var crsr = document.querySelector("#cursor");
 
 document.addEventListener("mousemove", function(event) {
-    const x = event.clientX - crsr.offsetWidth / 2 ; // Adjust for cursor width
-    const y = event.clientY - crsr.offsetHeight / 2; // Adjust for cursor height
+    const x = event.clientX - crsr.offsetWidth / 2 ; 
+    const y = event.clientY - crsr.offsetHeight / 2; 
 
-    // Move the cursor to the mouse position, adjusted to center
     crsr.style.transform = `translate(${x-675}px, ${y+10}px)`;
 });
-
-// function getBackgroundColor(element) {
-//     let styles = window.getComputedStyle(element); 
-//     let backgroundColor = styles.backgroundColor;
-
-//     // Traverse up the DOM if the element has a transparent or undefined background color
-//     while ((backgroundColor === "rgba(0, 0, 0, 0)" || backgroundColor === "transparent") && element.parentElement) {
-//         element = element.parentElement;
-//         styles = window.getComputedStyle(element);
-//         backgroundColor = styles.backgroundColor;
-//     }
-//     return backgroundColor;
-// }
-
-// document.addEventListener("mouseover", function(event) {
-//     let element = event.target;
-//     let backgroundColor = getBackgroundColor(element); // Get effective background color, moving up the DOM if necessary
-
-//     console.log("Hovered element background color:", backgroundColor); // Log the color for debugging
-
-//     if (backgroundColor === "rgb(0, 0, 0)" || backgroundColor === "rgba(0, 0, 0, 1)") {
-//         crsr.style.backgroundColor = "white";
-//     } else {
-//         crsr.style.backgroundColor = "black";
-//     }
-// });
-
-
-
-
 
 // Retrieve existing cart items from sessionStorage or initialize an empty array
 let cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
@@ -59,10 +28,10 @@ let rowContainer = document.querySelector(".rows");
 if (cartItems.length > 0) {
     // Hide the empty cart message and show the rows container
     if (empMsg) {
-        empMsg.style.display = "none"; // Hide empty message
+        empMsg.style.display = "none"; 
     }
     if (rowContainer) {
-        rowContainer.style.display = "flex"; // Show rows container
+        rowContainer.style.display = "flex"; 
     }
 
     // Update the product details in the row container
@@ -118,12 +87,12 @@ let total_amount=0;
 let container = document.querySelector(".cart-container");
 
 
-
+//-------------------calculating the total amount--------------
 function calculateTotal() {
     let product_price = document.querySelectorAll(".productprice");
     let total = document.querySelector(".total-value");
-    let cart_body = document.querySelector(".cart-body"); // Assuming this is the container for cart items
-    let empMsg = document.querySelector("#cart-empty"); // Assuming this is the empty message element
+    let cart_body = document.querySelector(".cart-body"); 
+    let empMsg = document.querySelector("#cart-empty"); 
 
     total_amount = 0;
 
@@ -183,19 +152,11 @@ product_quantity.forEach(product_quantity =>{
 
     })
 })
-
-
-let pay_btn = document.querySelector("#pay-btn");
-let buy_btn = document.querySelector(".buy-btn");
-function pay_amount(){
-        calculateTotal(); // Ensure total is updated
-       
-        pay_btn.textContent = `Pay Rs.${total_amount}`; // Correct template literal usage
-
-}
-buy_btn.addEventListener("click", () => {
-    pay_amount();
-});
+let selection = document.querySelectorAll('.selection select');
+let selectVal='';
+selection.forEach(select=>{
+    selectVal= select.value;
+})
 
 
 let city = document.querySelector("#city-select");
@@ -261,7 +222,41 @@ city.addEventListener("change",()=>{
         bglShops.style.display='none';
     }
         
-})
+});
+
+let pay_btn = document.querySelector("#pay-btn");
+let buy_btn = document.querySelector(".buy-btn");
+function pay_amount(){
+        calculateTotal(); // Ensure total is updated
+       
+        pay_btn.textContent = `Pay Rs.${total_amount}`; // Correct template literal usage
+
+}
+buy_btn.addEventListener("click", () => {
+    let cityValue = city.value; 
+    let selectedShop = null;
+
+    // Determine which shop dropdown is currently visible (based on the selected city)
+    if (cityValue === "Hyderabad") {
+        selectedShop = hydShops.value;
+    } else if (cityValue === "Mumbai") {
+        selectedShop = mumbShops.value;
+    } else if (cityValue === "Chennai") {
+        selectedShop = chenShops.value;
+    } else if (cityValue === "Banglore") {
+        selectedShop = bglShops.value;
+    } else if (cityValue === "Delhi") {
+        selectedShop = delhShops.value;
+    }
+
+    // Validation check: If no valid city or shop is selected
+    if (cityValue === "City" || selectedShop === "0") {
+        alert("Please, select both a City and a Shop before proceeding.");
+    } else {
+        // Proceed with payment amount display
+        pay_amount();
+    }
+});
 
 document.getElementById('pay-btn').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent form submission
