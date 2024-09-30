@@ -11,34 +11,91 @@ document.addEventListener("mousemove", function(event) {
 
 
 
+//------Animations------------
 let t1 = gsap.timeline();
 
-t1.from("#navbar h1",{
-    y:-30,
-    duration:0.3,
-    delay:0.5,
-    opacity:0,
-})
-
-t1.from(".navbar-options a",{
-    y:-30,
-    duration:0.3,
-    opacity:0,
-    stagger:0.1,
-})
-
-t1.from(".navbar-options li",{
-    y:-30,
-    duration:0.3,
-    opacity:0,
-    stagger:0.5,
-})
-t1.from(".navbar-options i",{
-    y:-30,
-    duration:0.3,
-    opacity:0,
-    stagger:0.5,
-})
+    t1.from("#navbar h1",{
+        y:-30,
+        duration:0.3,
+        delay:0.5,
+        opacity:0,
+    })
+    
+    t1.from(".navbar-options a",{
+        y:-30,
+        duration:0.3,
+        opacity:0,
+        stagger:0.1,
+    })
+    
+    t1.from(".navbar-options li",{
+        y:-30,
+        duration:0.3,
+        opacity:0,
+        stagger:0.3,
+    })
+    t1.from(".navbar-options i",{
+        y:-30,
+        duration:0.3,
+        opacity:0,
+        stagger:0.3,
+    })
+    t1.from(".quantity",{
+        y:-30,
+        duration:0.3,
+        opacity:0,
+        stagger:0.3,
+    })
+    
+    gsap.to("#navbar",{
+        backgroundColor: "#000",
+        duration: 0.5,
+        height: "70px",
+        scrollTrigger: {
+            trigger: "#navbar",
+            scroller: "body",
+            start: "top -10%",
+            end: "top -11",
+            scrub: true,
+        }
+    });
+    
+    gsap.to("#navbar h1", {
+        color: "#ffffff", 
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: "#navbar h1",
+            scroller: "body",
+            start: "top -10%",
+            end: "top -11",
+            scrub: true,
+        }
+    });
+    
+    gsap.to("#navbar a", {
+        color: "#ffffff", 
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: "#navbar a",
+            scroller: "body",
+            start: "top -10%",
+            end: "top -11",
+            scrub: true,
+        }
+    });
+    
+    gsap.to(".icons i", {
+        color: "#ffffff", 
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: ".icons i",
+            scroller: "body",
+            start: "top -10%",
+            end: "top -11",
+            scrub: true,
+        }
+    });
+ 
 
 //---------------hacker's effect----------------------
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

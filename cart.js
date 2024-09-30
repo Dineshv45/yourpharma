@@ -7,6 +7,7 @@ document.addEventListener("mousemove", function(event) {
     crsr.style.transform = `translate(${x-675}px, ${y+10}px)`;
 });
 
+
 // Retrieve existing cart items from sessionStorage or initialize an empty array
 let cartItems = JSON.parse(sessionStorage.getItem('cartItems')) || [];
 console.log(cartItems);

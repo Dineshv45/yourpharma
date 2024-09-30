@@ -1,3 +1,27 @@
+window.addEventListener("load", function() {
+    const loader = document.querySelector("#pre-loader");
+    const mainContent = document.querySelector("#main");
+    const preText = document.querySelector("#pre-loader h1");
+   
+
+    // Simulate pre-loader duration
+    setTimeout(function() {
+        // Animate the loader moving off-screen
+        gsap.to(loader, {
+            duration: 0.7,
+            y: -1000,
+            onComplete: function() {
+                loader.style.display = "none"; 
+                mainContent.style.opacity = 1;
+                startMainContentAnimations(); // Start main content animations
+            }
+        });
+    }, 4000); // Wait 4 seconds for the loader to disappear
+});
+
+
+
+
 var crsr= document.querySelector("#cursor");
 
 document.addEventListener("mousemove",function(dets){
@@ -6,98 +30,113 @@ document.addEventListener("mousemove",function(dets){
 
 let t1 = gsap.timeline();
 
-t1.from("#navbar h1",{
-    y:-30,
-    duration:0.3,
-    delay:0.5,
-    opacity:0,
-})
+function startMainContentAnimations(){
 
-t1.from(".navbar-options a",{
-    y:-30,
-    duration:0.3,
-    opacity:0,
-    stagger:0.1,
-})
-
-t1.from(".navbar-options li",{
-    y:-30,
-    duration:0.3,
-    opacity:0,
-    stagger:0.3,
-})
-t1.from(".navbar-options i",{
-    y:-30,
-    duration:0.3,
-    opacity:0,
-    stagger:0.3,
-})
-t1.from(".quantity",{
-    y:-30,
-    duration:0.3,
-    opacity:0,
-    stagger:0.3,
-})
+    t1.from("#main", {
+        duration: 1.5,
+        ease: "elastic.out(1, 0.3)",
+        scale: 0.5,
+        rotate: 10, 
+        transformOrigin: "50% 50%", // Set transform origin to center
+    });
+    
+    
 
 
-t1.from("#hero-section h1",{
-    x:500,
-    duration:0.3,
-    opacity:0,
-})
-t1.from("#hero-section h2",{
-    x:500,
-    duration:0.5,
-    opacity:0,
-})
-gsap.to("#navbar",{
-    backgroundColor: "#000",
-    duration: 0.5,
-    height: "70px",
-    scrollTrigger: {
-        trigger: "#navbar",
-        scroller: "body",
-        start: "top -10%",
-        end: "top -11",
-        scrub: true,
-    }
-});
-
-gsap.to("#navbar h1", {
-    color: "#ffffff", 
-    duration: 0.5,
-    scrollTrigger: {
-        trigger: "#navbar h1",
-        scroller: "body",
-        start: "top -10%",
-        end: "top -11",
-        scrub: true,
-    }
-});
-
-gsap.to("#navbar a", {
-    color: "#ffffff", 
-    duration: 0.5,
-    scrollTrigger: {
-        trigger: "#navbar a",
-        scroller: "body",
-        start: "top -10%",
-        end: "top -11",
-        scrub: true,
-    }
-});
-
-gsap.to(".icons i", {
-    color: "#ffffff", 
-    duration: 0.5,
-    scrollTrigger: {
-        trigger: ".icons i",
-        scroller: "body",
-        start: "top -10%",
-        end: "top -11",
-        scrub: true,
-    }
-});
+    t1.from("#navbar h1",{
+        y:-30,
+        duration:0.3,
+        delay:0.5,
+        opacity:0,
+    })
+    
+    t1.from(".navbar-options a",{
+        y:-30,
+        duration:0.3,
+        opacity:0,
+        stagger:0.1,
+    })
+    
+    t1.from(".navbar-options li",{
+        y:-30,
+        duration:0.3,
+        opacity:0,
+        stagger:0.3,
+    })
+    t1.from(".navbar-options i",{
+        y:-30,
+        duration:0.3,
+        opacity:0,
+        stagger:0.3,
+    })
+    t1.from(".quantity",{
+        y:-30,
+        duration:0.3,
+        opacity:0,
+        stagger:0.3,
+    })
+    
+    
+    t1.from("#hero-section h1",{
+        x:500,
+        duration:0.3,
+        opacity:0,
+    })
+    t1.from("#hero-section h2",{
+        x:500,
+        duration:0.5,
+        opacity:0,
+    })
+    gsap.to("#navbar",{
+        backgroundColor: "#000",
+        duration: 0.5,
+        height: "70px",
+        scrollTrigger: {
+            trigger: "#navbar",
+            scroller: "body",
+            start: "top -10%",
+            end: "top -11",
+            scrub: true,
+        }
+    });
+    
+    gsap.to("#navbar h1", {
+        color: "#ffffff", 
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: "#navbar h1",
+            scroller: "body",
+            start: "top -10%",
+            end: "top -11",
+            scrub: true,
+        }
+    });
+    
+    gsap.to("#navbar a", {
+        color: "#ffffff", 
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: "#navbar a",
+            scroller: "body",
+            start: "top -10%",
+            end: "top -11",
+            scrub: true,
+        }
+    });
+    
+    gsap.to(".icons i", {
+        color: "#ffffff", 
+        duration: 0.5,
+        scrollTrigger: {
+            trigger: ".icons i",
+            scroller: "body",
+            start: "top -10%",
+            end: "top -11",
+            scrub: true,
+        }
+    });
+    
+}
 
 
 
@@ -497,10 +536,3 @@ function flyingAnimation(cartbtn) {
 //     loader.style.display = "none";
 // });
 
-const loader = document.querySelector("#pre-loader");
-       
-        window.addEventListener("load", function() {
-            setTimeout(function() {
-                loader.style.display = "none";
-            }, 4000)
-        });
