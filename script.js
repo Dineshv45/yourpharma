@@ -2,6 +2,7 @@ window.addEventListener("load", function() {
     const loader = document.querySelector("#pre-loader");
     const mainContent = document.querySelector("#main");
     const preText = document.querySelector("#pre-loader h1");
+    const navbar= document.querySelector("#navbar");
    
 
     // Simulate pre-loader duration
@@ -13,7 +14,8 @@ window.addEventListener("load", function() {
             onComplete: function() {
                 loader.style.display = "none"; 
                 mainContent.style.opacity = 1;
-                startMainContentAnimations(); // Start main content animations
+                navbar.style.opacity=1;
+                startMainContentAnimations(); 
             }
         });
     }, 4000); // Wait 4 seconds for the loader to disappear
@@ -31,112 +33,66 @@ document.addEventListener("mousemove",function(dets){
 let t1 = gsap.timeline();
 
 function startMainContentAnimations(){
-
     t1.from("#main", {
-        duration: 1.5,
+        duration: 1.2,
         ease: "elastic.out(1, 0.3)",
         scale: 0.5,
         rotate: 10, 
-        transformOrigin: "50% 50%", // Set transform origin to center
+        transformOrigin: "50% 50%", 
     });
-    
-    
-
 
     t1.from("#navbar h1",{
         y:-30,
         duration:0.3,
         delay:0.5,
         opacity:0,
-    })
+    });
     
-    t1.from(".navbar-options a",{
-        y:-30,
-        duration:0.3,
-        opacity:0,
-        stagger:0.1,
-    })
-    
-    t1.from(".navbar-options li",{
+    t1.from(".navbar-options a, .navbar-options li, .navbar-options i, .quantity", {
         y:-30,
         duration:0.3,
         opacity:0,
         stagger:0.3,
-    })
-    t1.from(".navbar-options i",{
-        y:-30,
-        duration:0.3,
-        opacity:0,
-        stagger:0.3,
-    })
-    t1.from(".quantity",{
-        y:-30,
-        duration:0.3,
-        opacity:0,
-        stagger:0.3,
-    })
-    
+    });
     
     t1.from("#hero-section h1",{
         x:500,
         duration:0.3,
         opacity:0,
-    })
+    });
+    
     t1.from("#hero-section h2",{
         x:500,
         duration:0.5,
         opacity:0,
-    })
-    gsap.to("#navbar",{
-        backgroundColor: "#000",
+    });
+
+    // GSAP ScrollTrigger for navbar background and text color changes
+    gsap.to("#navbar", {
+        backgroundColor: "#000", 
         duration: 0.5,
         height: "70px",
         scrollTrigger: {
             trigger: "#navbar",
-            scroller: "body",
-            start: "top -10%",
+            start: "top -10%", 
             end: "top -11",
+            // markers:true,
             scrub: true,
         }
     });
-    
-    gsap.to("#navbar h1", {
+
+    gsap.to("#navbar h1, #navbar a, .icons i", {
         color: "#ffffff", 
         duration: 0.5,
         scrollTrigger: {
-            trigger: "#navbar h1",
-            scroller: "body",
+            trigger: "#navbar",
             start: "top -10%",
             end: "top -11",
             scrub: true,
         }
     });
-    
-    gsap.to("#navbar a", {
-        color: "#ffffff", 
-        duration: 0.5,
-        scrollTrigger: {
-            trigger: "#navbar a",
-            scroller: "body",
-            start: "top -10%",
-            end: "top -11",
-            scrub: true,
-        }
-    });
-    
-    gsap.to(".icons i", {
-        color: "#ffffff", 
-        duration: 0.5,
-        scrollTrigger: {
-            trigger: ".icons i",
-            scroller: "body",
-            start: "top -10%",
-            end: "top -11",
-            scrub: true,
-        }
-    });
-    
 }
+
 
 
 
@@ -254,7 +210,7 @@ hideBtn.addEventListener("click", () => {
             y: 100,
             duration: 1.5,
             onComplete: () => {
-                images.style.display = "none"; // Hide images after animation
+                images.style.display = "none"; 
             }
         });
         gsap.to(img2, {
@@ -277,8 +233,8 @@ hideBtn.addEventListener("click", () => {
             opacity: 0,
             duration: 0.5,
             onComplete: () => {
-                buttonText.innerText = "Hide Ideas"; // Change text
-                gsap.to(buttonText, { opacity: 1, duration: 0.3 }); // Fade in
+                buttonText.innerText = "Hide Ideas"; 
+                gsap.to(buttonText, { opacity: 1, duration: 0.3 });
             }
         });
 
@@ -289,7 +245,7 @@ hideBtn.addEventListener("click", () => {
         gsap.to(page4, { height: "100vh", duration: 1 });
 
         // Show images again
-        images.style.display = "block"; // Set to flex for better alignment
+        images.style.display = "block";
 
         // Animate images back into position
         gsap.from(img1, {
@@ -297,7 +253,7 @@ hideBtn.addEventListener("click", () => {
             y: 100,
             duration: 0.5,
             onComplete: () => {
-                gsap.to(img1, { x: 20, y: -20, duration: 0.5 }); // Move img1 back to original position
+                gsap.to(img1, { x: 20, y: -20, duration: 0.5 }); 
             }
         });
         gsap.from(img2, {
@@ -305,7 +261,7 @@ hideBtn.addEventListener("click", () => {
             y: -100,
             duration: 0.5,
             onComplete: () => {
-                gsap.to(img2, { x: 0, y: 0, duration: 0.5 }); // Move img2 back to original position
+                gsap.to(img2, { x: 0, y: 0, duration: 0.5 }); 
             }
         });
 
@@ -314,7 +270,7 @@ hideBtn.addEventListener("click", () => {
         box2.style.display = "none";
 
         para.forEach(para => {
-            para.style.display = "none"; // Ensure paragraphs are displayed
+            para.style.display = "none"; 
         
         });
 
@@ -323,8 +279,8 @@ hideBtn.addEventListener("click", () => {
             opacity: 0,
             duration: 0.5,
             onComplete: () => {
-                buttonText.innerText = "Explore Ideas"; // Change text
-                gsap.to(buttonText, { opacity: 1, duration: 0.3 }); // Fade in
+                buttonText.innerText = "Explore Ideas";
+                gsap.to(buttonText, { opacity: 1, duration: 0.3 }); 
             }
         });
 
@@ -344,22 +300,21 @@ function wrapWordsInSpan() {
             const span = document.createElement('span');
             span.innerText = word + ' '; // Add a space after each word
             span.style.transition = 'transform 0.3s'; // Transition for the hover effect
-            span.classList.add('word'); // Optional: add a class for styling
+            span.classList.add('word'); 
 
             // Add hover effect
             span.addEventListener('mouseenter', () => {
-                gsap.to(span, { y: -15, duration: 0.1 }); // Move up on hover
+                gsap.to(span, { y: -15, duration: 0.1 }); 
             });
             span.addEventListener('mouseleave', () => {
-                gsap.to(span, { y: 0, duration: 0.1 }); // Return to original position
+                gsap.to(span, { y: 0, duration: 0.1 }); 
             });
 
-            paragraph.appendChild(span); // Append span to the paragraph
+            paragraph.appendChild(span); 
         });
     });
 }
 
-// Call the function to wrap words when the script loads
 wrapWordsInSpan();
 
 
